@@ -1,0 +1,14 @@
+@startuml Casodeuso
+
+left to right direction
+actor Usuario as User
+
+rectangle "Gestión de Proyectos" {
+    User --> (Crear Proyecto)
+    User --> (Asignar Miembro al Proyecto)
+    User --> (Crear Tarea)
+    User --> (Asignar Tarea)
+    User --> (Comentar Tarea)
+}
+
+@enduml

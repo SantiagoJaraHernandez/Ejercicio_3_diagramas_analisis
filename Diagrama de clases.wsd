@@ -1,0 +1,60 @@
+@startuml clase
+
+class Proyecto {
+    - id: int
+    - nombre: string
+    - descripcion: string
+    - fechaInicio: date
+    - objetivos: string[]
+    + agregarMiembro(miembro: Miembro, rol: string): void
+    + agregarTarea(tarea: Tarea): void
+    + agregarComentario(comentario: Comentario): void
+    + agregarArchivo(archivo: Archivo): void
+}
+
+class Tarea {
+    - id: int
+    - nombre: string
+    - descripcion: string
+    - estado: string
+    - fechaVencimiento: date
+    - prioridad: string
+    + asignarMiembro(miembro: Miembro): void
+    + agregarSubtarea(subtarea: Tarea): void
+}
+
+class Miembro {
+    - id: int
+    - nombre: string
+    - rol: string
+}
+
+class Comentario {
+    - id: int
+    - contenido: string
+    - fecha: date
+}
+
+class Archivo {
+    - id: int
+    - nombre: string
+    - tipo: string
+}
+
+class Reunion {
+    - id: int
+    - fecha: date
+    - lugar: string
+}
+
+Proyecto *-- Tarea
+Proyecto *-- Miembro
+Proyecto *-- Comentario
+Proyecto *-- Archivo
+Proyecto *-- Reunion
+
+Tarea *-- Tarea
+Tarea *-- Miembro
+Tarea *-- Comentario
+
+@enduml

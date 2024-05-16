@@ -1,0 +1,26 @@
+@startuml Secuencia
+
+actor Usuario
+participant "Sistema" as Sistema
+
+activate Usuario
+Usuario -> Sistema: Crear Proyecto
+activate Sistema
+Sistema --> Usuario: Proyecto Creado
+
+Usuario -> Sistema: Crear Tarea
+activate Sistema
+Sistema --> Usuario: Tarea Creada
+
+Usuario -> Sistema: Asignar Tarea
+activate Sistema
+Sistema --> Usuario: Tarea Asignada
+
+Usuario -> Sistema: Comentar en Tarea
+activate Sistema
+Sistema --> Usuario: Comentario Agregado
+
+deactivate Usuario
+deactivate Sistema
+
+@enduml
